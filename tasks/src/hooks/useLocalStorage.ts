@@ -1,0 +1,28 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+export function useLocalStorage<T>(key: string, initialValue: T) {
+  const [value, setValue] = useState<T>(initialValue);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const item = localStorage.getItem(key);
+
+    if (item) {
+      setValue(JSON.parse(item));
+    }
+
+    setLoaded(true);
+  }, [key]);
+
+  useEffect(() => {
+    if (!loaded) {
+      return;
+    }
+
+    localStorage.setItem(key, JSON.stringify(value));
+  }, [key, value, loaded]);
+
+  return [value, setValue] as const;
+}

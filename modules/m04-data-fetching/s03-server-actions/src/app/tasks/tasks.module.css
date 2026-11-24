@@ -1,0 +1,133 @@
+.page {
+  width: min(100% - 2rem, 1100px);
+  margin: 3rem auto;
+}
+
+.page h1 {
+  margin-bottom: 1.5rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+}
+
+.form,
+.card {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid #8886;
+  border-radius: 0.75rem;
+}
+
+.form {
+  align-content: start;
+}
+
+.field,
+.upload label {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  padding: 0.55rem;
+  border: 1px solid #888;
+  border-radius: 0.35rem;
+  font: inherit;
+}
+
+.button,
+.secondary {
+  padding: 0.55rem 0.8rem;
+  border: 1px solid #555;
+  border-radius: 0.35rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.button {
+  background: #2459b3;
+  color: white;
+  border-color: #2459b3;
+}
+
+.button:disabled,
+.secondary:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.list,
+.skeletonList {
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+}
+
+.completed .title {
+  text-decoration: line-through;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.LOW {
+  color: #15552e;
+  background: #d3f5dc;
+}
+
+.MEDIUM {
+  color: #704300;
+  background: #fff0c2;
+}
+
+.HIGH {
+  color: #8a1f1f;
+  background: #ffe0e0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.upload {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.muted {
+  opacity: 0.75;
+}
+
+.error {
+  color: #c52d2d;
+}
+
+.success {
+  color: #188548;
+}
+
+.skeleton {
+  min-height: 9rem;
+  border-radius: 0.75rem;
+  background: #8884;
+}
+
+@media (min-width: 760px) {
+  .layout {
+    grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr);
+  }
+}
